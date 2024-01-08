@@ -1,0 +1,118 @@
+keyclock:- 
+___________________
+application.propertries:- spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:8080/auth/realms/microservices-project.realm
+________________________
+
+standalone.bat
+
+standalone.bat -Djboss.http.port=8888
+ 
+standalone.bat -Djboss.socket.binding.port-offset=8888
+
+for keyclock 
+
+usename :- admin
+
+password:- Susmitha@1234 
+
+Susmitha@22 password for user in kryclock
+ 
+
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
+
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+</dependency>
+
+---------------------------------------------------------------
+VAULT SERVER SETUP:-
+______________________
+
+vault server -dev
+
+after geetinga warming about unsealed sheet
+ open another cmd and run the below
+
+
+set VAULT_ADDR=http://127.0.0.1:8200
+vault status
+vault kv put secret/test password=Susmitha@123
+vault kv get secret/test
+
+vault dependencies:-
+________________________
+
+<dependency>
+<groupId>org.springframework.cloud</groupId>
+<artifactId>spring-cloud-starter-vault-config</artifactId>
+</dependency>
+
+--------------------------------------------------------
+
+RABBITMQ SERVER
+____________________
+
+rabbitmq-server restart
+
+SET HOMEDRIVE=C:
+rabbitmq-service remove
+rabbitmq-service install
+rabbitmq-plugins.bat enable rabbitmq_management
+------------------------------------------------------
+
+
+
+killing the server port:-
+________________________
+windows-> windows->system32-> place courser on address bar type cmd
+
+give this command --> netstat -ano | findstr :1122
+press enter
+  copy the number which is present in the screen 
+and type this --->
+taskkill /PID 3744 /F
+ex:-[Microsoft Windows [Version 10.0.19044.2251]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\System32>netstat -ano | findstr :1122
+  TCP    0.0.0.0:1122           0.0.0.0:0              LISTENING       3744
+  TCP    [::]:1122              [::]:0                 LISTENING       3744
+
+C:\Windows\System32>taskkill /PID 3744 /F
+SUCCESS: The process with PID 3744 has been terminated.]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

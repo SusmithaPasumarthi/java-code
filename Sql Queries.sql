@@ -1,0 +1,23 @@
+use mydb;
+create table Employee(id int NOT NULL PRIMARY KEY,name varchar(255),salary double,age int, address varchar(255),role varchar(255));
+select * from new_Employee;
+create table Employee(id int NOT NULL PRIMARY KEY,name varchar(255),mobileNo  varchar(255),email varchar(255),salary double,address varchar(255));
+RENAME TABLE Employee TO new_Employee;
+create table jdbc(questionId int NOT NULL PRIMARY KEY Auto_Increment,questionName varchar(2000) NOT NULL,description  varchar(10000), numberOfVotes int,numberOfViews int,userName varchar(2000) NOT NULL,reputationScore int NOT NULL,numberOfGoldBadges int, numberOfBronzeBadges int,NumberOfSilverBadges int);
+select * from jdbc;
+drop table question_jdbc;
+select count(*) from jdbc;
+insert into jdbc(questionname, description, numberofviews,  username, reputationscore, numberofgoldbadges, numberofbronzebadges, numberofsilverbadges) values("Tomcat server failed to start","Tomcat server has been failed to start due to authentication problem",547,"john",1500,12,2,3);
+SELECT * FROM jdbc WHERE DESCRIPTION IS NOT NULL AND NUMBEROFVOTES IS NOT NULL AND NUMBEROFVIEWS IS NOT NULL  AND REPUTATIONSCORE IS NOT NULL AND NUMBEROFGOLDBADGES IS NOT NULL AND NUMBEROFBRONZEBADGES IS NOT NULL AND NUMBEROFSILVERBADGES IS NOT NULL;
+ALTER TABLE jdbc MODIFY createdOn datetime default current_timestamp;
+create table jdbc(questionId int NOT NULL PRIMARY KEY auto_increment ,questionName varchar(2000) NOT NULL,description  varchar(10000),numberOfVotes int,numberOfViews int,createdOn timestamp default current_timestamp,userName varchar(2000) NOT NULL,reputationScore int NOT NULL,numberOfGoldBadges int,numberOfBronzeBadges int,NumberOfSilverBadges int);
+create table sample(id int,studentname varchar(200), createdon datetime default current_timestamp, modifiedon datetime);
+insert into sample(id, studentname) values (2,"niharika");
+select * from sample;
+drop table jdbc;
+update sample set studentname='niharikapasumarthi' WHERE id=2;
+SET SQL_SAFE_UPDATES=0;
+SET SQL_SAFE_UPDATES=1;
+create table jdbc(questionId int NOT NULL PRIMARY KEY AUTO_INCREMENT,questionName varchar(2000) NOT NULL,description  varchar(10000),numberOfVotes int,numberOfViews int,createdon  timestamp default current_timestamp,modifiedon datetime default current_timestamp on update current_timestamp,userName varchar(2000) NOT NULL,reputationScore int NOT NULL,numberOfGoldBadges int,numberOfBronzeBadges int,NumberOfSilverBadges int);
+insert into jdbc (questionname, description, numberofvotes, numberofviews, username, reputationscore, numberofgoldbadges, numberofbronzebadges, numberofsilverbadges) values("What is jdbc?","Tomcat server has been failed to start due to authentication problem",22,547,"john",1500,12,2,3)
+update jdbc set numberofvotes=99 WHERE questionName='What is jdbc?';
